@@ -8,15 +8,15 @@
 
  Funciona de tal manera que, cuando ejecutas el programa se conectara a la base datos, con los datos que has introducido en el fichero "db.properties".
  
- Luego te mostrara un Menu que tiene una serie de opciones para que puedas elejir lo que vas a hacer.
+ Seguidamente te mostrara el menu, qu ees una lista de opciones, en el cual puedes decidir que hacer. 
  
- Tienes unas opciones que hacen:
+Estas son algunas de las diferentes opciones:
 
- - Borrar tablas o datos especificados
- - Crear tablas o insertar datos
- - Poblar datos desde un fichero csv que he generado en el proyecto anterior
- - Mostrar datos en distintas maneras
- - Modificar datos
+ - Borrar tablas / datos especificos
+ - Crear tablas / insertar datos
+ - Poblar datos desde un fichero csv, importado de la practica anterior webScrapping (https://github.com/JoelRodri/WebScrapping)
+ - Mostrar datos de diferentes maneras que puedes decir
+ - Modificar datos basicos de las tablas
 
 # JavaDoc
-[Javadoc.html]()
+[Javadoc.html](https://joelrodri.github.io/AccesoDatosJDBC/)
