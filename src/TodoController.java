@@ -30,22 +30,22 @@ public class TodoController {
      */
     public void rellenar() {
         int cont = 0;
-        String[] rata;
+        String[] array;
         try {
             BufferedReader br = new BufferedReader(new FileReader(new File("f1.csv")));
             String linia;
             while ((linia = br.readLine()) != null) {
                 if (cont > 0) {
-                    rata = linia.split("\"");
+                    array = linia.split("\"");
 
                     try {
-                        String rol = rata[3];
+                        String escuderia = array[5];
 
-                        String sql = "INSERT INTO rol " +
-                                "(rol) VALUES (?)";
+                        String sql = "INSERT INTO escuderia " +
+                                "(escuderia) VALUES (?)";
 
                         PreparedStatement pst = connection.prepareStatement(sql);
-                        pst.setString(1, rol);
+                        pst.setString(1, escuderia);
 
                         pst.executeUpdate();
 
@@ -55,17 +55,35 @@ public class TodoController {
                     }
 
                     try {
-                        String nom = rata[1];
-                        String rol = rata[3];
-                        String historia = rata[5];
+                        String nombre = array[1];
+                        String numero = array[3];
+                        String escuderia = array[5];
+                        String pais = array[7];
+                        String podiums = array[9];
+                        String puntosTotales = array[11];
+                        String gpCompletados = array[13];
+                        String titulosMundiales = array[15];
+                        String mejorPos = array[17];
+                        String mejorClas = array[19];
+                        String fechaNaci = array[21];
+                        String nacionalidad = array[23];
 
                         String sql = "INSERT INTO campeon " +
-                                "(nom,rol,historia) VALUES (?,?,?)";
+                                "(numero, nombre, escuderia, pais, podiums, puntosTotales, gpCompletados, titulosMundiales, mejorPos, mejorClas, fechaNaci, nacionalidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
                         PreparedStatement pst = connection.prepareStatement(sql);
-                        pst.setString(1, nom);
-                        pst.setString(2, rol);
-                        pst.setString(3, historia);
+                        pst.setString(1, numero);
+                        pst.setString(2,nombre);
+                        pst.setString(3, escuderia);
+                        pst.setString(4, pais);
+                        pst.setString(5, podiums);
+                        pst.setString(6, puntosTotales);
+                        pst.setString(7, gpCompletados);
+                        pst.setString(8, titulosMundiales);
+                        pst.setString(9, mejorPos);
+                        pst.setString(10, mejorClas);
+                        pst.setString(11, fechaNaci);
+                        pst.setString(12, nacionalidad);
 
                         pst.executeUpdate();
 

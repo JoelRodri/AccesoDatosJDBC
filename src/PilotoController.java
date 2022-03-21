@@ -65,7 +65,7 @@ public class PilotoController {
             String nacionalidad = sc.nextLine();
 
             String sql = "INSERT INTO campeon " +
-                    "(numero, nombre, escuderia, pais) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                    "(numero, nombre, escuderia, pais, podiums, puntosTotales, gpCompletados, titulosMundiales, mejorPos, mejorClas, fechaNaci, nacionalidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement pst = connection.prepareStatement(sql);
             pst.setString(1, numero);
