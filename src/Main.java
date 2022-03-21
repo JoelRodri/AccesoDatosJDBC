@@ -13,8 +13,8 @@ public class Main {
 		ConnectionFactory connectionFactory = ConnectionFactory.getInstance();
 		Connection c = connectionFactory.connect();
 
-		CampeonController campeonController = new CampeonController(c);
-		RolController rolController = new RolController(c);
+		PilotoController pilotoController = new PilotoController(c);
+		EscuderiaController escuderiaController = new EscuderiaController(c);
 		TodoController todoController = new TodoController(c);
 
 
@@ -22,13 +22,13 @@ public class Main {
 		while (option > 0 && option < 16) {
 			switch (option) {
 				case 1:
-					campeonController.borrarTabla();
-					rolController.borrarTabla();
+					pilotoController.borrarTabla();
+					escuderiaController.borrarTabla();
 					break;
 
 				case 2:
-					rolController.crearTabla();
-					campeonController.crearTabla();
+					escuderiaController.crearTabla();
+					pilotoController.crearTabla();
 					break;
 
 				case 3:
@@ -36,50 +36,46 @@ public class Main {
 					break;
 
 				case 4:
-					campeonController.showCampeonPorRol();
+					pilotoController.showPilotoPorEscuderia();
 					break;
 
 				case 5:
-					campeonController.showCampeonCon();
+					pilotoController.showPilotoCon();
 					break;
 
 				case 6:
-					campeonController.showCampeonPor();
+					pilotoController.showPilotoPor();
 					break;
 
 				case 7:
-					campeonController.modificarCampeon();
+					pilotoController.modificarPiloto();
 					break;
 
 				case 8:
-					rolController.modificarRol();
+					pilotoController.borrarPiloto();
 					break;
 
 				case 9:
-					campeonController.borrarCampeon();
+					pilotoController.borrarPilotoPorEscuderia();
 					break;
 
 				case 10:
-					campeonController.borrarCampeonPorRol();
+					escuderiaController.createEscuderia();
 					break;
 
 				case 11:
-					rolController.createRol();
+					pilotoController.createPiloto();
 					break;
 
 				case 12:
-					campeonController.createCampeon();
+					pilotoController.showPilotos();
 					break;
 
 				case 13:
-					campeonController.showCampeones();
+					escuderiaController.showEscuderias();
 					break;
 
 				case 14:
-					rolController.showRols();
-					break;
-
-				case 15:
 					System.exit(0);
 					break;
 

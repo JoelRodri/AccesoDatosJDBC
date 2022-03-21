@@ -32,7 +32,7 @@ public class TodoController {
         int cont = 0;
         String[] rata;
         try {
-            BufferedReader br = new BufferedReader(new FileReader(new File("lol.csv")));
+            BufferedReader br = new BufferedReader(new FileReader(new File("f1.csv")));
             String linia;
             while ((linia = br.readLine()) != null) {
                 if (cont > 0) {

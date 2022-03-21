@@ -31,23 +31,22 @@ public class Menu {
 			System.out.println("1. Borrar Tablas");
 			System.out.println("2. Craer Tablas");
 			System.out.println("3. Rellenar Tablas");
-			System.out.println("4. Mostrar los que sean ?");
-			System.out.println("5. Mostrar los campeones que tengan un ?");
-			System.out.println("6. Mostrar todos los campeon que empiezan por ?");
-			System.out.println("7. Modificar el nombre de un campeon");
-			System.out.println("8. Modificar el rols de los campeones que empiezan por ?");
-			System.out.println("9. Eliminar un campeon");
-			System.out.println("10. Eliminar campeones con el rol ?");
-			System.out.println("11. Añadir un rol");
-			System.out.println("12. Añadir un campeon");
-			System.out.println("13. Mostrar campeones");
-			System.out.println("14. Mostrar roles");
-			System.out.println("15. Exit");
-			System.out.println("Esculli opció: ");
+			System.out.println("4. Inserta escuderia y muestra los pilotos");
+			System.out.println("5. Mostrar los campeones que contengan lo que digas en el nombre");
+			System.out.println("6. Mostrar todos los campeon que empiezan por lo que digas");
+			System.out.println("7. Modificar el nombre de un piloto");
+			System.out.println("8. Eliminar un piloto");
+			System.out.println("9. Borrar pilotos por escuderia");
+			System.out.println("10. Crear escuderia");
+			System.out.println("11. Crear piloto");
+			System.out.println("12. Mostrar pilotos");
+			System.out.println("13. Mostrar escuderias");
+			System.out.println("14. Exit");
+			System.out.println("Escoge opción: ");
 			try {
 				option = Integer.parseInt(br.readLine());
 			} catch (NumberFormatException | IOException e) {
-				System.out.println("valor no vàlid");
+				System.out.println("valor no valido");
 				e.printStackTrace();
 
 			}
@@ -60,21 +59,21 @@ public class Menu {
 	}
 
 	/**
-	 * Este metodo sirve para mostrar un menu de rol
+	 * Este metodo sirve para mostrar el menu de escuderias
 	 * @param c recibe la coneccion
-	 * @return devuelve el rol que elegiste
+	 * @return devuelve la escuderia que elegiste
 	 */
-	public String RolMenu(Connection c){
-		RolController rolController = new RolController(c);
+	public String escuderiaMenu(Connection c){
+		EscuderiaController escuderiaController = new EscuderiaController(c);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		for(;;){
-			rolController.showRols();
-			System.out.println("Elige el rol: ");
+			escuderiaController.showEscuderias();
+			System.out.println("Elige la escuderia: ");
 			try {
 				opciones = br.readLine();
 			} catch (NumberFormatException | IOException e) {
-				System.out.println("valor no vàlid");
+				System.out.println("valor no valido");
 				e.printStackTrace();
 			}
 			return opciones;
@@ -82,21 +81,21 @@ public class Menu {
 	}
 
 	/**
-	 * Este metodo sirve para mostrar un menu de nombres de campeon
+	 * Este metodo sirve para mostrar un menu de nombres de piloto
 	 * @param c recibe la coneccion
-	 * @return devuelve el nombre que elegiste
+	 * @return devuelve el piloto que elegiste
 	 */
-	public String NomMenu(Connection c){
-		CampeonController campeonController = new CampeonController(c);
+	public String NombreMenu(Connection c){
+		PilotoController pilotoController = new PilotoController(c);
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		System.out.println("\n" + "Campeones: ");
+		System.out.println("\n" + "Pilotos: ");
 		for(;;){
-			campeonController.showCampeonNom();
+			pilotoController.showPilotoNombre();
 			try {
 				opciones = br.readLine();
 			} catch (NumberFormatException | IOException e) {
-				System.out.println("valor no vàlid");
+				System.out.println("valor no valido");
 				e.printStackTrace();
 			}
 			return opciones;
