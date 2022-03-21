@@ -4,7 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * Esta clase sirve para controlar la tabla rol situada en mi base de datos
+ * Esta clase sirve para controlar la tabla escuderia situada en la base de datos
  */
 public class EscuderiaController {
     private Connection connection;
@@ -87,7 +87,7 @@ public class EscuderiaController {
     }
 
     /**
-     * Este metodo sirve para crear la tabla de rol
+     * Este metodo sirve para crear la tabla de escuderia
      */
     public void crearTabla(){
         try {

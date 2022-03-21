@@ -3,7 +3,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 /**
- * Esta clase sirve para controlar la tabla campeon situada en mi base de datos
+ * Esta clase sirve para controlar la tabla piloto situada en mi base de datos
  */
 public class PilotoController {
     private Connection connection;
@@ -64,7 +64,7 @@ public class PilotoController {
             System.out.println("Nacionalidad: ");
             String nacionalidad = sc.nextLine();
 
-            String sql = "INSERT INTO campeon " +
+            String sql = "INSERT INTO piloto " +
                     "(numero, nombre, escuderia, pais, podiums, puntosTotales, gpCompletados, titulosMundiales, mejorPos, mejorClas, fechaNaci, nacionalidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement pst = connection.prepareStatement(sql);
@@ -110,8 +110,7 @@ public class PilotoController {
     public void crearTabla(){
         try {
             Statement st = connection.createStatement();
-            st.executeUpdate("CREATE TABLE piloto(id smallint primary key GENERATED ALWAYS AS IDENTITY, " +
-                    "numero varchar(5), " +
+            st.executeUpdate("numero varchar(5) primary key GENERATED ALWAYS AS IDENTITY, " +
                     "nombre varchar(30), " +
                     "escuderia varchar (20) references escuderia(escuderia), " +
                     "pais varchar (20), " +
@@ -263,7 +262,7 @@ public class PilotoController {
     }
 
     /**
-     * Este metodo sirve para mostrar campeones
+     * Este metodo sirve para mostrar piloto
      */
     public void showPilotos(){
         System.out.println("\n" + "Pilotos: ");

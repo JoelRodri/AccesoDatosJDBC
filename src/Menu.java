@@ -11,7 +11,7 @@ public class Menu {
 	private String opciones;
 
 	/**
-	 * Este es un constructor y llama a la clase padre suyo(nose quien es)
+	 * Este es un constructor
 	 */
 	public Menu() {
 		super();
@@ -32,8 +32,8 @@ public class Menu {
 			System.out.println("2. Craer Tablas");
 			System.out.println("3. Rellenar Tablas");
 			System.out.println("4. Inserta escuderia y muestra los pilotos");
-			System.out.println("5. Mostrar los campeones que contengan lo que digas en el nombre");
-			System.out.println("6. Mostrar todos los campeon que empiezan por lo que digas");
+			System.out.println("5. Mostrar los pilotos que contengan lo que digas en el nombre");
+			System.out.println("6. Mostrar todos los pilotos que empiezan por lo que digas");
 			System.out.println("7. Modificar el nombre de un piloto");
 			System.out.println("8. Eliminar un piloto");
 			System.out.println("9. Borrar pilotos por escuderia");
