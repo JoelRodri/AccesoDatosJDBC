@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 /**
- * Esta clase sirve para leer fichero CSV y meter en la base de datos
+ * Esta clase sirve para leer el fichero CSV y meter la info en la base de datos
  */
 public class TodoController {
     private Connection connection;
