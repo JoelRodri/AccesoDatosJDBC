@@ -68,8 +68,8 @@ public class TodoController {
                         String fechaNaci = array[21];
                         String nacionalidad = array[23];
 
-                        String sql = "INSERT INTO campeon " +
-                                "(numero, nombre, escuderia, pais, podiums, puntosTotales, gpCompletados, titulosMundiales, mejorPos, mejorClas, fechaNaci, nacionalidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                        String sql = "INSERT INTO piloto" +
+                                "(numero, nombre, escuderia, pais, podiums, puntosTotales, gpCompletados, titulosMundiales, mejorPos, mejorClas, fechaNacimiento, nacionalidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
                         PreparedStatement pst = connection.prepareStatement(sql);
                         pst.setString(1, numero);

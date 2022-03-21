@@ -65,7 +65,7 @@ public class PilotoController {
             String nacionalidad = sc.nextLine();
 
             String sql = "INSERT INTO piloto " +
-                    "(numero, nombre, escuderia, pais, podiums, puntosTotales, gpCompletados, titulosMundiales, mejorPos, mejorClas, fechaNaci, nacionalidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+                    "(numero, nombre, escuderia, pais, podiums, puntosTotales, gpCompletados, titulosMundiales, mejorPos, mejorClas, fechaNacimiento, nacionalidad) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement pst = connection.prepareStatement(sql);
             pst.setString(1, numero);
@@ -110,7 +110,8 @@ public class PilotoController {
     public void crearTabla(){
         try {
             Statement st = connection.createStatement();
-            st.executeUpdate("numero varchar(5) primary key GENERATED ALWAYS AS IDENTITY, " +
+            st.executeUpdate("CREATE TABLE piloto("+
+                    "numero varchar(5) primary key, " +
                     "nombre varchar(30), " +
                     "escuderia varchar (20) references escuderia(escuderia), " +
                     "pais varchar (20), " +
@@ -121,7 +122,7 @@ public class PilotoController {
                     "mejorPos varchar (10), " +
                     "mejorClas varchar (5), " +
                     "fechaNacimiento varchar (20), " +
-                    "nacionalidad varchar (30)");
+                    "nacionalidad varchar (30))");
             st.close();
 
         } catch (SQLException e) {
@@ -284,7 +285,7 @@ public class PilotoController {
                         "Titulos mundiales: " + rs.getString("titulosMundiales") + "\n" +
                         "Mejor posición: " + rs.getString("mejorPos") + "\n" +
                         "Mejor clasificación: " + rs.getString("mejorClas") + "\n" +
-                        "Fecha nacimiento: " + rs.getString("fechaNaci") + "\n" +
+                        "Fecha nacimiento: " + rs.getString("fechaNacimiento") + "\n" +
                         "Nacionalidad: " + rs.getString("nacionalidad"));
             }
 

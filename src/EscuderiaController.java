@@ -77,7 +77,7 @@ public class EscuderiaController {
      */
     public void borrarTabla() {
         try {
-            Statement st = connection.createStatement();
+            PreparedStatement st = (PreparedStatement) connection.createStatement();
             st.executeUpdate("DROP table escuderias");
             st.close();
 

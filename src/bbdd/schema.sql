@@ -1,6 +1,6 @@
 CREATE TABLE escuderia(escuderia varchar(20) primary key);
 
-CREATE TABLE piloto(numero varchar(5) primary key GENERATED ALWAYS AS IDENTITY,
+CREATE TABLE piloto(numero varchar(5) primary key,
                     nombre varchar(30),
                     escuderia varchar (20) references escuderia(escuderia),
                     pais varchar (20),
